@@ -43,31 +43,11 @@ export const loginUser = createAsyncThunk(
             const data = await response.json();
 
             if (!response.ok) {
-                if (credentials.username === 'testadmin' && credentials.password === 'Test@123') {
-                    return {
-                        id: 999,
-                        username: 'testadmin',
-                        firstName: 'Test',
-                        lastName: 'Admin',
-                        gender: 'male',
-                        token: 'mock-jwt-token-for-test-admin'
-                    };
-                }
                 return rejectWithValue(data.message || 'Login failed');
             }
 
             return data;
         } catch (error: any) {
-            if (credentials.username === 'testadmin' && credentials.password === 'Test@123') {
-                return {
-                    id: 999,
-                    username: 'testadmin',
-                    firstName: 'Test',
-                    lastName: 'Admin',
-                    gender: 'male',
-                    token: 'mock-jwt-token-for-test-admin'
-                };
-            }
             return rejectWithValue(error.message || 'Network error');
         }
     }

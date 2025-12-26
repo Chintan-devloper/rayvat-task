@@ -4,8 +4,8 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { loginUser } from '../features/auth/authSlice';
 
 const LoginPage = () => {
-    const [username, setUsername] = useState('testadmin');
-    const [password, setPassword] = useState('Test@123');
+    const [username, setUsername] = useState('emilys');
+    const [password, setPassword] = useState('emilyspass');
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const { status, error, isAuthenticated } = useAppSelector((state) => state.auth);
@@ -72,7 +72,7 @@ const LoginPage = () => {
 
                 <div className="text-center text-muted" style={{ marginTop: '1.5rem', fontSize: '0.875rem' }}>
                     <p>Demo Credentials:</p>
-                    <p>User: testadmin / Pass: Test@123</p>
+                    <p>User: emilys / Pass: emilyspass</p>
                 </div>
             </div>
         </div>
